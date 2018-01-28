@@ -1,1 +1,1 @@
-LargeFileGenerator.exe d:\large_text_file.txt 5000
+LargeFileGenerator.exe d:\large_text_file.txt 10000

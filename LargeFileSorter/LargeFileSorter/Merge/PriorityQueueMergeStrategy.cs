@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace LargeFileSorter
 
         public void MergeChunks(string outputFilePath, string[] chunkFiles)
         {
+            Console.WriteLine(nameof(PriorityQueueMergeStrategy));
             using (var writer = File.CreateText(outputFilePath))
             {
                 List<StreamReader> readers = chunkFiles.Select(s => new StreamReader(s, Encoding.UTF8)).ToList();

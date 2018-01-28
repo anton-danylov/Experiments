@@ -44,6 +44,8 @@ namespace LargeFileSorter
                 }
             }
 
+            DoLargeObjectHeapCompaction();
+
             return chunkFiles.ToArray();
         }
     }

@@ -110,13 +110,13 @@ namespace LargeFileSorter
                 builder.RegisterType<ParallelSplitStrategy>().As<ISplitChunksStrategy>();
             }
 
-            if (mergeStrategy == nameof(SortedDictionaryMergeStrategy))
+            if (mergeStrategy == nameof(PriorityQueueMergeStrategy))
             {
-                builder.RegisterType<SortedDictionaryMergeStrategy>().As<IMergeChunksStrategy>();
+                builder.RegisterType<PriorityQueueMergeStrategy>().As<IMergeChunksStrategy>();
             }
             else
             {
-                builder.RegisterType<PriorityQueueMergeStrategy>().As<IMergeChunksStrategy>();
+                builder.RegisterType<SortedDictionaryMergeStrategy>().As<IMergeChunksStrategy>();
             }
 
 

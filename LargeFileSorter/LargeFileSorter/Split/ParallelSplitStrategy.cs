@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,6 +66,9 @@ namespace LargeFileSorter
 
                 Task.WaitAll(tasksStarted.ToArray());
             }
+
+            // LOH is fragmented after splitting, so compaction is required to avoid occasional OOM later on
+            DoLargeObjectHeapCompaction();
 
             return chunkFiles.ToArray();
         }

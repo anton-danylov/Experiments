@@ -18,6 +18,7 @@ namespace LargeFileSorter
 
         public void MergeChunks(string outputFilePath, string[] chunkFiles)
         {
+            Console.WriteLine(nameof(SortedDictionaryMergeStrategy));
             using (var writer = File.CreateText(outputFilePath))
             {
                 List<StreamReader> readers = null;
