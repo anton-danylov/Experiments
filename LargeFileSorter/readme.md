@@ -41,7 +41,7 @@ To simplify experiments functionality is split according to Strategy pattern, an
 
 
 ## How to run
-Rebuild solution all required files will be copied to /Bin folder. Then edit and run /Bin/!generate.bat and then /Bin/!sort.bat
+Build Release configuration and all required files will be copied to /Bin folder. Then edit and run /Bin/!generate.bat and then /Bin/!sort.bat
 
 
 ## Components

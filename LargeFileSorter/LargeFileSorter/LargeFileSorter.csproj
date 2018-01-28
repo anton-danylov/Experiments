@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChunkDataSorter.cs" />
+    <Compile Include="CommandLineProcessor.cs" />
     <Compile Include="FileChunkReader.cs" />
     <Compile Include="Interfaces\IChunkDataSorter.cs" />
     <Compile Include="Interfaces\IFileChunkReader.cs" />

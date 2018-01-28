@@ -92,7 +92,12 @@ namespace LargeFileGenerator
 
             CancellationTokenSource cts = new CancellationTokenSource();
 
-            long actualSize = await generator.GenerateFileAsync(targetPath, targetSize, cts.Token, progress);
+
+            long actualSize = 0;
+            Task.Run(async () =>
+            {
+                actualSize = await generator.GenerateFileAsync(targetPath, targetSize, cts.Token, progress);
+            }).Wait();
 
             Console.WriteLine();
             Console.WriteLine($"File created. Size: {actualSize}");
