@@ -38,9 +38,11 @@ namespace LargeFileSorter
                 {
                     C5.IPriorityQueueHandle<string> handleMin;
                     string line = priorityQueue.DeleteMin(out handleMin);
+                    StreamReader reader = readerForHandle[handleMin];
+                    readerForHandle.Remove(handleMin);
+
                     writer.WriteLine(line);
 
-                    var reader = readerForHandle[handleMin];
                     string nextLine = reader.ReadLine();
                     if (nextLine != null)
                     {
