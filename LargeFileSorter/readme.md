@@ -3,7 +3,7 @@
 ## Overview
 Solution implemets classical approach to external sorting. 
 ### Split
-At a first step file is split to chunks. Chunk size depends on the memory limit, which is either provided as a command line argument, or calculated by split strategy itself. SyncSplitStrategy uses *Max(AvailablePhysicalMemory, TotalPhysicalMemory / 8)* bytes, while ParallelSplitStrategy, which simultaneously sorts chunks on available processor cores, sets memory limit for each chunk to *Max(AvailablePhysicalMemory, TotalPhysicalMemory / 8) / ProcessorCount*.
+At a first step file is split to chunks. Chunk size depends on the memory limit, which is either provided as a command line argument, or calculated by split strategy itself. SyncSplitStrategy uses *Max(AvailablePhysicalMemory / 2, TotalPhysicalMemory / 12)* bytes, while ParallelSplitStrategy, which simultaneously sorts chunks on available processor cores, sets memory limit for each chunk to *Max(AvailablePhysicalMemory / 2, TotalPhysicalMemory / 12) / ProcessorCount*.
 
 Sorted chunks are stored do disk, until Merge phase begins.
 
