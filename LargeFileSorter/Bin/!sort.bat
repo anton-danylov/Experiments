@@ -1,1 +1,1 @@
-LargeFileSorter.exe "d:\large_text_file.txt" "d:\large_text_file_sorted.txt" /comparer:"UnsafeStringComparer2.dll"
+LargeFileSorter.exe "d:\large_text_file.txt" "d:\large_text_file_sorted.txt" /comparer:"UnsafeStringComparer2.dll" /mergeStrategy:PriorityQueueMergeStrategy
