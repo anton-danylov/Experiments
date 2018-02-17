@@ -1,0 +1,21 @@
+<mat-toolbar color="secondary">
+    <span>Menu Characters</span>
+</mat-toolbar>
+
+<mat-list>
+  <mat-list-item *ngFor="let character of characters">
+    <!-- <app-character [character]="character"></app-character> -->
+    <h3 matLine> {{ character.name }} </h3>
+    <p matLine> {{ character.height }} </p>
+    <p matLine> Mass: {{character.mass}} </p>
+    <p matLine> Hair color: {{character.hair_color}} </p>
+
+    <p matLine ngSwitch="{{character.eye_color}}"> Eye color: 
+      <span *ngSwitchCase="'blue'" [style.color]="'blue'">{{character.eye_color}}</span>
+      <span *ngSwitchCase="'yellow'" [style.color]="'yellow'" [style.background]="'black'">{{character.eye_color}}</span>
+      <span *ngSwitchCase="'red'" [style.color]="'red'">{{character.eye_color}}</span>
+      <span *ngSwitchDefault>{{character.eye_color}}</span>
+    </p>
+  
+  </mat-list-item>
+</mat-list>

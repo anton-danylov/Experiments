@@ -1,0 +1,8 @@
+.crawl {
+    white-space: pre-line;
+    font-style: italic;
+    font-size: 12px !important;
+    margin-left: 14px;
+    margin-top: 16px;
+    word-wrap: break-word;
+}

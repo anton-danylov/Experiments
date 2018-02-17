@@ -1,0 +1,18 @@
+<mat-toolbar color="secondary">
+    <span>Menu Movies</span>
+</mat-toolbar>
+
+<mat-list>
+  <mat-list-item *ngFor="let movie of movies">
+    <h3 matLine> Episode {{movie.episode_id}} - {{movie.title}} </h3>
+    <p matLine> Release date: {{movie.release_date | date:'fullDate' | uppercase}} </p>
+      <p matLine class="crawl">  {{movie.opening_crawl}}  </p>
+  </mat-list-item>
+</mat-list>
+
+
+<!-- <ul>
+  <li *ngFor="let movie of movies">
+    <app-movie [movie]="movie"></app-movie>
+  </li>
+</ul> -->
