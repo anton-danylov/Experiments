@@ -51,7 +51,63 @@ namespace ConsoleSamples
 
     class Program
     {
-        
+
+        static void Main(string[] args)
+        {
+
+
+            CountDiscIntersections();
+
+            //ChangeString();
+            //Interning();
+            //DelegateRecursion();
+            //ReflectionTest();
+            //PrimeNumbersRanges();
+            //TaskCompletionSourceTest();
+            //PrimeNumbersTaskTest();
+            //TaskExceptions();
+            //MultithreadingSamples();
+            //TaskCombinators();
+            //TypeConverters();
+            //WordCount();
+            //TestValueTypeInterfaceBoxing();
+            //TestCultureInfo();
+            //TestEnums();
+            //ClosuresTest();
+            //DelegatesTest();
+            //AnonType();
+            //TristateBoolExample();
+            //OverrideBool();
+            //Dump();
+
+            Console.WriteLine("Press Enter to exit...");
+            Console.ReadLine();
+        }
+
+        private static void CountDiscIntersections()
+        {
+            DiscIntersectionCounter counter = new DiscIntersectionCounter();
+
+            int[] A1 = { 1, 5, 2, 1, 4, 0 };
+
+            int[] A2 = { 1, 2147483647, 0 };
+
+            int[] A3 = { 1, 0, 1, 0, 1 };
+
+            int[] A4 = { 7, 2, 1, 15, 11, 5, 0, 3, 2, 1 };
+
+
+            var data = new int[][]{ A1, A2, A3, A4 };
+
+            foreach (var array in data)
+            {
+                int count = counter.Solution(array);
+                int countN2 = counter.SolutionN2(array);
+
+                Console.WriteLine($"{count} == {countN2} : {count == countN2}");
+            }
+        }
+
         public unsafe static void ChangeString()
         {
             //var fieldInfo = typeof(string).GetField("m_firstChar", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -77,42 +133,12 @@ namespace ConsoleSamples
             var handle = GCHandle.Alloc(immutable2, GCHandleType.Pinned);
             var addr = handle.AddrOfPinnedObject();
 
-            "zvezda".Select((c, i) => new { c = c, i = i }).ToList().ForEach(p => Marshal.WriteInt16(addr, p.i*sizeof(char), p.c));
+            "zvezda".Select((c, i) => new { c = c, i = i }).ToList().ForEach(p => Marshal.WriteInt16(addr, p.i * sizeof(char), p.c));
             handle.Free();
 
             Console.WriteLine(immutable2);
-
-
         }
 
-
-        static void Main(string[] args)
-        {
-            ChangeString();
-            //Interning();
-            //DelegateRecursion();
-            //ReflectionTest();
-            //PrimeNumbersRanges();
-            //TaskCompletionSourceTest();
-            //PrimeNumbersTaskTest();
-            //TaskExceptions();
-            //MultithreadingSamples();
-            //TaskCombinators();
-            //TypeConverters();
-            //WordCount();
-            //TestValueTypeInterfaceBoxing();
-            //TestCultureInfo();
-            //TestEnums();
-            //ClosuresTest();
-            //DelegatesTest();
-            //AnonType();
-            //TristateBoolExample();
-            //OverrideBool();
-            //Dump();
-
-            Console.WriteLine("Press Enter to exit...");
-            Console.ReadLine();
-        }
 
         public static void DelegateRecursion()
         {
