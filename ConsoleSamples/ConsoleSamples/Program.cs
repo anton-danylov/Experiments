@@ -54,10 +54,9 @@ namespace ConsoleSamples
 
         static void Main(string[] args)
         {
+            CountGenomicRange();
 
-
-            CountDiscIntersections();
-
+            //CountDiscIntersections();
             //ChangeString();
             //Interning();
             //DelegateRecursion();
@@ -82,6 +81,22 @@ namespace ConsoleSamples
 
             Console.WriteLine("Press Enter to exit...");
             Console.ReadLine();
+        }
+
+        private static void CountGenomicRange()
+        {
+            const string S = "CAGCCTA";
+            int[] P = new int[] { 2, 5, 0 }, Q = new int[] { 4, 5, 6 };
+            int[] expectedResult = new int[] { 2, 4, 1 };
+
+            var first = new GenomicRangeQuery.FirstSolutionWithStruct();
+            var second = new GenomicRangeQuery.BetterSolution();
+
+
+            bool firstOk = first.Solution(S, P, Q).SequenceEqual(expectedResult);
+            bool secondOk = first.Solution(S, P, Q).SequenceEqual(expectedResult);
+
+            Console.WriteLine($"First OK: {firstOk}; Second OK: {secondOk}");
         }
 
         private static void CountDiscIntersections()

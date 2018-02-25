@@ -50,6 +50,7 @@
     <Compile Include="BoolOverride.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="DiscIntersectionCounter.cs" />
+    <Compile Include="GenomicRangeQuery.cs" />
     <Compile Include="ParallelSort.cs" />
     <Compile Include="PCQueue.cs" />
     <Compile Include="Program.cs" />
