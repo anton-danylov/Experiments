@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // {
+        //     "label": "build",
+        //     "type": "shell",
+        //     "command": "tsc",
+        //     "args": [
+        //         "permutation-generator.ts"
+        //     ],
+        //     "problemMatcher": [
+        //         "$tsc"
+        //     ],
+
+        // },
+        {
+            "label": "start server",
+            "type": "process",
+            "command": "http-server",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

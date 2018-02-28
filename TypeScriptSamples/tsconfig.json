@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "dist/",
+        "sourceMap": true,
+        "module": "commonjs",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+    },
+    "files": [
+        "permutation-generator.ts"
+    ]
+}
