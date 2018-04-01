@@ -8,14 +8,14 @@
             "type": "chrome",
             "request": "attach",
             "name": "Attach to Chrome",
-            "port": 9222,
+            "port": 5500,
             "webRoot": "${workspaceFolder}"
         },
         {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
+            "url": "http://localhost:8080/prime-palindrome/prime-palindrome.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

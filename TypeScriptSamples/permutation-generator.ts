@@ -73,7 +73,7 @@ function findCombinations(node, combinations, currentCombo) {
 }
 
 function printCombinations() {
-    var row = ["1", "2", "3", "4", "5", "6"];
+    var row = ["1", "2", "3", "4", "5", "a"];
     var nodes = getLowerNodes(row);
 
     printNodes(nodes, "");

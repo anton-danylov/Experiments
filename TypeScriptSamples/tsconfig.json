@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2015",
+        "module": "umd",
         "outDir": "dist/",
         "sourceMap": true,
-        "module": "commonjs",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "moduleResolution": "classic"
     },
     "files": [
-        "permutation-generator.ts"
+        "permutation-generator.ts",
+        "prime-palindrome/prime-palindrome.ts"
     ]
 }
