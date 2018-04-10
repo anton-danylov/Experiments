@@ -44,5 +44,40 @@ namespace ShoppingCheckout.Tests
             decimal total = cart.GetTotal();
             Assert.Equal(20.0m, total);
         }
+
+        [Fact]
+        public void PercentDiscount()
+        {
+            List<ICheckoutRule> rules = new List<ICheckoutRule>();
+            rules.Add(new PercentDiscountRule(10));
+
+            ShoppingCart cart = new ShoppingCart(rules);
+
+            cart.Add(new Product("TypeA", 20.0m));
+            cart.Add(new Product("TypeB", 100.0m));
+
+
+            decimal total = cart.GetTotal();
+            Assert.Equal(120.0m - 12m, total);
+        }
+
+        [Fact]
+        public void MutuallyExclusiveDiscounts()
+        {
+            List<ICheckoutRule> rules = new List<ICheckoutRule>();
+            rules.Add(new Discount3for2Rule("TypeA"));
+            rules.Add(new PercentDiscountRule(10));
+
+            ShoppingCart cart = new ShoppingCart(rules);
+
+            cart.Add(new Product("TypeA", 10.0m));
+            cart.Add(new Product("TypeA", 10.0m));
+            cart.Add(new Product("TypeA", 10.0m));
+            cart.Add(new Product("TypeB", 100.0m));
+
+
+            decimal total = cart.GetTotal();
+            Assert.Equal(110.0m, total);
+        }
     }
 }
